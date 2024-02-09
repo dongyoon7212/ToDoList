@@ -1,0 +1,121 @@
+.root-modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000077;
+}
+
+.modal-show {
+    display: flex;
+}
+
+.modal-layout {
+    background-color: white;
+    border: 2px solid #dbdbdb;
+    border-radius: 10px;
+    width: 600px;
+}
+
+.modal-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #dbdbdb;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.modal-header-button {
+    position: absolute;
+    left: 17px;
+    top: 13px;
+    display: flex;
+}
+
+.modal-mac-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+.modal-mac-button:nth-of-type(1) {
+    background-color: rgb(237, 106, 94);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-mac-button:nth-of-type(1) > i {
+    font-size: 15px;
+    display: none;
+}
+
+.modal-mac-button:nth-of-type(1):hover > i {
+    display: block;
+}
+
+.modal-mac-button:nth-of-type(2) {
+    background-color: rgb(244, 191, 79);
+}
+
+.modal-mac-button:nth-of-type(3) {
+    background-color: rgb(97, 197, 84);
+}
+
+.modal-header > i {
+    margin-right: 5px;
+}
+
+.modal-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #dbdbdb;
+    height: 400px;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #dbdbdb;
+    resize: none;
+    padding: 20px;
+    outline: none;
+    font-size: 18px;
+
+    &:focus {
+        background-color: #fafafa;
+    }
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.modal-footer-button {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.modal-footer-button:nth-of-type(1) {
+    border-right: 1px solid #dbdbdb;
+    border-radius: 0 0 0 10px;
+}
+
+.modal-footer-button:nth-of-type(2) {
+    border-radius: 0 0 10px 0;
+}

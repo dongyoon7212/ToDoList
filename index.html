@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/layout.css" />
+        <link rel="stylesheet" href="./css/header.css" />
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./css/footer.css" />
+        <link rel="stylesheet" href="./css/modal.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="root-layout">
+            <div class="main-layout">
+                <header class="main-header">
+                    <div class="header-button">
+                        <div class="mac-button"></div>
+                        <div class="mac-button"></div>
+                        <div class="mac-button"></div>
+                    </div>
+                    <h1 class="main-title">To Do List</h1>
+                </header>
+                <main>
+                    <div class="main-container">
+                        <ul class="todo-content-list">
+                            <li class="todo-content-box">
+                                <div class="todo-content-header">
+                                    <h3 class="todo-content-date">
+                                        <i
+                                            class="fa-solid fa-calendar-days"
+                                        ></i>
+                                        2024.02.09
+                                    </h3>
+                                </div>
+                                <div class="todo-content-main">
+                                    <div class="todo-content">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Assumenda quidem
+                                        praesentium voluptates. Vel, aspernatur
+                                        fuga! Dolores aperiam id dicta voluptas
+                                        vel numquam expedita molestiae?
+                                        Inventore quos ipsam repudiandae magnam
+                                        eum.
+                                    </div>
+                                </div>
+                                <div class="todo-content-footer">
+                                    <button class="todo-content-footer-button">
+                                        <i class="fa-regular fa-heart"></i>
+                                        <!-- <i class="fa-solid fa-heart"></i> -->
+                                    </button>
+                                    <div class="todo-content-footer-container">
+                                        <button
+                                            class="todo-content-footer-button"
+                                        >
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button
+                                            class="todo-content-footer-button"
+                                        >
+                                            <i
+                                                class="fa-solid fa-trash-can"
+                                            ></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </main>
+                <footer>
+                    <button
+                        class="footer-button"
+                        onclick="handleClickedAddButton()"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </footer>
+            </div>
+            <div class="root-modal">
+                <div class="modal-layout">
+                    <header class="modal-header">
+                        <div class="modal-header-button">
+                            <div
+                                class="modal-mac-button"
+                                onclick="handleClickedCloseButton()"
+                            >
+                                <i class="fa-solid fa-xmark close"></i>
+                            </div>
+                            <div class="modal-mac-button"></div>
+                            <div class="modal-mac-button"></div>
+                        </div>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        2024.02.09
+                    </header>
+                    <main class="modal-main">
+                        <textarea>
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste non, sapiente, ipsum sint veritatis consequatur, autem nemo rem voluptatem debitis soluta aliquid esse impedit commodi sequi. Quo harum debitis architecto.</textarea
+                        >
+                    </main>
+                    <footer class="modal-footer">
+                        <button class="modal-footer-button">확인</button>
+                        <button
+                            class="modal-footer-button"
+                            onclick="handleClickedCloseButton()"
+                        >
+                            취소
+                        </button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script src="./js/modal.js"></script>
+        <script src="./js/todo.js"></script>
+    </body>
+</html>
