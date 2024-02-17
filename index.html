@@ -33,7 +33,7 @@
                 <main>
                     <div class="main-container">
                         <ul class="todo-content-list">
-                            <li class="todo-content-box">
+                            <!-- <li class="todo-content-box">
                                 <div class="todo-content-header">
                                     <h3 class="todo-content-date">
                                         <i
@@ -56,7 +56,7 @@
                                 <div class="todo-content-footer">
                                     <button class="todo-content-footer-button">
                                         <i class="fa-regular fa-heart"></i>
-                                        <!-- <i class="fa-solid fa-heart"></i> -->
+                                        <i class="fa-solid fa-heart"></i>
                                     </button>
                                     <div class="todo-content-footer-container">
                                         <button
@@ -73,7 +73,7 @@
                                         </button>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </main>
@@ -100,15 +100,17 @@
                             <div class="modal-mac-button"></div>
                         </div>
                         <i class="fa-solid fa-calendar-days"></i>
-                        2024.02.09
                     </header>
                     <main class="modal-main">
-                        <textarea>
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste non, sapiente, ipsum sint veritatis consequatur, autem nemo rem voluptatem debitis soluta aliquid esse impedit commodi sequi. Quo harum debitis architecto.</textarea
-                        >
+                        <textarea class="modal-content-input"></textarea>
                     </main>
                     <footer class="modal-footer">
-                        <button class="modal-footer-button">확인</button>
+                        <button
+                            class="modal-footer-button"
+                            onclick="handleClickedModalAddButton()"
+                        >
+                            확인
+                        </button>
                         <button
                             class="modal-footer-button"
                             onclick="handleClickedCloseButton()"
