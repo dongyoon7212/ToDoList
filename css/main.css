@@ -21,8 +21,15 @@ main {
     flex-wrap: wrap;
 }
 
+.todo-content-complete-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .todo-content-box {
-    width: 300px;
+    width: 298px;
     height: 400px;
     background-color: white;
     border-radius: 10px;
@@ -66,12 +73,29 @@ main {
     padding: 5px 5px;
 }
 
+.todo-content-check-button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: white;
+}
+
+.todo-content-check-button > i {
+    font-size: 20px;
+}
+
 .todo-content-footer-button {
     width: 35px;
     height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    background-color: white;
+}
+
+.todo-content-footer-button > i {
+    font-size: 15px;
 }
 
 .checkbox {

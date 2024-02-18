@@ -40,7 +40,7 @@ function handleClickedCloseButton() {
     rootModal.classList.remove("modal-show");
 }
 
-function handleClickedAEditButton(id, date) {
+async function handleClickedAddEditButton(id, date, complete) {
     const modalContentInput = document.querySelector(".modal-content-input");
 
     if (modalContentInput.value === "") {
@@ -49,16 +49,49 @@ function handleClickedAEditButton(id, date) {
     }
 
     const todo = {
-        todoListid: id,
+        todoListId: id,
         todoListDate: date,
         todoListContent: modalContentInput.value,
-        todoListLike: 0,
+        todoListComplete: complete,
     };
 
+    console.log(todo);
+
     const jsonTodoData = JSON.stringify(todo);
+
+    const option = {
+        method: "post",
+        Headers: {
+            "Content-Type": "application/json",
+        },
+        body: jsonTodoData,
+    };
+
+    try {
+        const response = await fetch(
+            "http://localhost:8080/todolist/update",
+            option
+        );
+
+        if (!response.ok) {
+            throw await response.json();
+        }
+
+        const responseData = await response.json();
+
+        console.log(responseData);
+
+        alert("정상적으로 수정이 완료 되었습니다.");
+
+        handleClickedCloseButton();
+
+        handleGetTodoData();
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-function handleClickedEditButton(id, date, content) {
+function handleClickedEditButton(id, date, content, complete) {
     const rootModal = document.querySelector(".root-modal");
     const modalContentInput = document.querySelector(".modal-content-input");
     const modalLayout = document.querySelector(".modal-layout");
@@ -84,7 +117,7 @@ function handleClickedEditButton(id, date, content) {
         <footer class="modal-footer">
             <button
                 class="modal-footer-button"
-                onclick="handleClickedAEditButton('${id}', '${date}')"
+                onclick="handleClickedAddEditButton('${id}', '${date}', '${complete}')"
             >
                 확인
             </button>
@@ -98,7 +131,4 @@ function handleClickedEditButton(id, date, content) {
     `;
 
     rootModal.classList.add("modal-show");
-
-    const editData = modalContentInput.value;
-    console.log(editData);
 }

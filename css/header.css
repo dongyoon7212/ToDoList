@@ -4,7 +4,7 @@
     height: 70px;
     background-color: #fafafa;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     border-top: 1px solid #dbdbdb;
@@ -26,6 +26,18 @@
     display: flex;
 }
 
+.header-side-button {
+    position: absolute;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+.header-side-button > i {
+    font-size: 25px;
+}
+
 .mac-button {
     width: 20px;
     height: 20px;
@@ -33,14 +45,14 @@
     margin-right: 5px;
 }
 
-.mac-button:nth-of-type(1){
+.mac-button:nth-of-type(1) {
     background-color: rgb(237, 106, 94);
 }
 
-.mac-button:nth-of-type(2){
+.mac-button:nth-of-type(2) {
     background-color: rgb(244, 191, 79);
 }
 
-.mac-button:nth-of-type(3){
+.mac-button:nth-of-type(3) {
     background-color: rgb(97, 197, 84);
 }

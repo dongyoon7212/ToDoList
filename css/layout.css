@@ -1,8 +1,14 @@
 .root-layout {
     padding: 20px;
+    width: 50%;
 }
 
 .main-layout {
     box-shadow: 0px 0px 15px #00000030;
     border-radius: 10px;
+}
+
+.root {
+    width: 200%;
+    display: flex;
 }

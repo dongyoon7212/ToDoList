@@ -20,61 +20,99 @@
         <title>Document</title>
     </head>
     <body>
-        <div class="root-layout">
-            <div class="main-layout">
-                <header class="main-header">
-                    <div class="header-button">
-                        <div class="mac-button"></div>
-                        <div class="mac-button"></div>
-                        <div class="mac-button"></div>
-                    </div>
-                    <h1 class="main-title">To Do List</h1>
-                </header>
-                <main>
-                    <div class="main-container">
-                        <ul class="todo-content-list">
-                        </ul>
-                    </div>
-                </main>
-                <footer>
-                    <button
-                        class="footer-button"
-                        onclick="handleClickedAddButton()"
-                    >
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
-                </footer>
-            </div>
-            <div class="root-modal">
-                <div class="modal-layout">
-                    <header class="modal-header">
-                        <div class="modal-header-button">
-                            <div
-                                class="modal-mac-button"
+        <div class="root">
+            <div class="root-layout">
+                <div class="main-layout">
+                    <header class="main-header">
+                        <div class="header-button">
+                            <div class="mac-button"></div>
+                            <div class="mac-button"></div>
+                            <div class="mac-button"></div>
+                        </div>
+                        <h1 class="main-title">To Do List</h1>
+                        <button
+                            class="header-side-button"
+                            onclick="handleClickedSideRightButton()"
+                        >
+                            <i class="fa-solid fa-angles-right"></i>
+                        </button>
+                    </header>
+                    <main>
+                        <div class="main-container">
+                            <ul class="todo-content-list"></ul>
+                        </div>
+                    </main>
+                    <footer>
+                        <button
+                            class="footer-button"
+                            onclick="handleClickedAddButton()"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </footer>
+                </div>
+                <div class="root-modal">
+                    <div class="modal-layout">
+                        <header class="modal-header">
+                            <div class="modal-header-button">
+                                <div
+                                    class="modal-mac-button"
+                                    onclick="handleClickedCloseButton()"
+                                >
+                                    <i class="fa-solid fa-xmark close"></i>
+                                </div>
+                                <div class="modal-mac-button"></div>
+                                <div class="modal-mac-button"></div>
+                            </div>
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </header>
+                        <main class="modal-main">
+                            <textarea class="modal-content-input"></textarea>
+                        </main>
+                        <footer class="modal-footer">
+                            <button
+                                class="modal-footer-button"
+                                onclick="handleClickedModalAddButton()"
+                            >
+                                확인
+                            </button>
+                            <button
+                                class="modal-footer-button"
                                 onclick="handleClickedCloseButton()"
                             >
-                                <i class="fa-solid fa-xmark close"></i>
-                            </div>
-                            <div class="modal-mac-button"></div>
-                            <div class="modal-mac-button"></div>
+                                취소
+                            </button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <div class="root-layout">
+                <div class="main-layout">
+                    <header class="main-header">
+                        <div class="header-button">
+                            <div class="mac-button"></div>
+                            <div class="mac-button"></div>
+                            <div class="mac-button"></div>
                         </div>
-                        <i class="fa-solid fa-calendar-days"></i>
-                    </header>
-                    <main class="modal-main">
-                        <textarea class="modal-content-input"></textarea>
-                    </main>
-                    <footer class="modal-footer">
+                        <h1 class="main-title">Complete To Do List</h1>
                         <button
-                            class="modal-footer-button"
-                            onclick="handleClickedModalAddButton()"
+                            class="header-side-button"
+                            onclick="handleClickedSideLeftButton()"
                         >
-                            확인
+                            <i class="fa-solid fa-angles-left"></i>
                         </button>
+                    </header>
+                    <main>
+                        <div class="main-container">
+                            <ul class="todo-content-complete-list"></ul>
+                        </div>
+                    </main>
+                    <footer>
                         <button
-                            class="modal-footer-button"
-                            onclick="handleClickedCloseButton()"
+                            class="footer-button"
+                            onclick="handleClickedAddButton()"
                         >
-                            취소
+                            <i class="fa-solid fa-plus"></i>
                         </button>
                     </footer>
                 </div>
@@ -82,5 +120,6 @@
         </div>
         <script src="./js/modal.js"></script>
         <script src="./js/todo.js"></script>
+        <script src="./js/common.js"></script>
     </body>
 </html>
