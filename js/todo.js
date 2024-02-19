@@ -47,6 +47,7 @@ async function handleGetTodoData() {
                         </button>
                         <button
                             class="todo-content-footer-button"
+                            onclick="handleClickedDeleteButton(${todo.todoListId})"
                         >
                             <i
                                 class="fa-solid fa-trash-can"
@@ -104,15 +105,10 @@ async function handleGetCompleteTodoData() {
                     <div class="todo-content-footer-container">
                         <button
                             class="todo-content-footer-button"
-                            onclick="handleClickedEditButton('${todo.todoListId}', '${todo.todoListDate}', '${todo.todoListContent}', '${todo.todoListComplete}')"
-                        >
-                            <i class="fa-solid fa-pen"></i>
-                        </button>
-                        <button
-                            class="todo-content-footer-button"
                         >
                             <i
                                 class="fa-solid fa-trash-can"
+                                onclick="handleClickedDeleteButton(${todo.todoListId})"
                             ></i>
                         </button>
                     </div>
@@ -213,6 +209,7 @@ async function handleClickedCompleteButton(id, date, content, complete) {
 
             if (!response.ok) {
                 throw await response.json();
+                3;
             }
 
             const responseData = await response.json();
@@ -230,5 +227,84 @@ async function handleClickedCompleteButton(id, date, content, complete) {
         }
     } else {
         return;
+    }
+}
+
+async function handleClickedDeleteButton(id) {
+    console.log(id);
+
+    const deleteTodo = {
+        todoListId: id,
+    };
+
+    const jsonTodoData = JSON.stringify(deleteTodo);
+
+    const option = {
+        method: "post",
+        Headers: {
+            "Content-Type": "application/json",
+        },
+        body: jsonTodoData,
+    };
+
+    let isConfirmed = confirm("정말로 ToDo를 삭제하시겠습니까?");
+    if (isConfirmed === true) {
+        try {
+            const response = await fetch(
+                "http://localhost:8080/todolist/delete",
+                option
+            );
+
+            if (!response.ok) {
+                throw await response.json();
+            }
+
+            const responseData = await response.json();
+            if (responseData.successCount === 1) {
+                alert("성공적으로 삭제가 완료되었습니다.");
+            }
+
+            handleGetTodoData();
+            handleGetCompleteTodoData();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    console.log(deleteTodo);
+}
+
+async function handleClickedCompleteDeleteButton() {
+    const option = {
+        method: "post",
+        Headers: {
+            "Content-Type": "application/json",
+        },
+    };
+
+    let isConfirmed = confirm("완료된 ToDo를 모두 삭제하시겠습니까?");
+
+    if (isConfirmed === true) {
+        try {
+            const response = await fetch(
+                "http://localhost:8080/todolist/completedelete",
+                option
+            );
+
+            if (!response.ok) {
+                throw await response.json();
+            }
+
+            const responseData = await response.json();
+
+            alert(
+                `성공적으로 완료된 ToDo ${responseData.successCount}건 삭제가 완료되었습니다.`
+            );
+
+            handleGetTodoData();
+            handleGetCompleteTodoData();
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
